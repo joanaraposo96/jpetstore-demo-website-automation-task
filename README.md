@@ -1,6 +1,6 @@
-# JPetStore Automation Task
+# JPetStore Demo Automation Task
 
-This project is a task for the **JPetstore website**, demonstrating automated interactions using **Playwright**. The main functionalities covered are:
+This project is a task for the **JPetStore Demo website**, demonstrating automated interactions using **Playwright**. The main functionalities covered are:
 
 ## Features
 - **Login and Logout** - access the user account and verify the logged-in status on the homepage.
