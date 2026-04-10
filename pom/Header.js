@@ -1,8 +1,8 @@
 export default class Header {
     constructor(page) {
         this.page = page;
-        this.searchBar = page.getByRole('textbox');
-        this.searchButton = page.getByRole('button', { name: 'Search' });
+        this.searchBar = page.locator('input[name="keyword"]');
+        this.searchButton = page.locator('input[name="searchProducts"]');
     }
 
     async searchForProduct(productName) {
