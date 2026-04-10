@@ -20,7 +20,7 @@ Follow these steps to get the project running on your machine:
 1. **Clone the repository**  
 ```bash
 git clone https://github.com/joanaraposo96/jpetstore-demo-website-automation-task.git
-cd petstore-search-view-add-to-cart
+cd jpetstore-demo-website-automation-task
 ```
 
 2. **Install dependencies**
