@@ -1,10 +1,11 @@
 import { expect } from "@playwright/test";
-import Homepage from "./Homepage.js";
+import Header from "./Header";
 
-export default class CategoryPage extends Homepage {
+export default class CategoryPage {
     constructor(page, category) {
-        super(page);
+        this.page = page;
         this.category = category;
+        this.header = new Header(page);
     }
 
     async expectCategoryHeaderToBeVisible() {

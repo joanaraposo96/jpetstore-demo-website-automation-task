@@ -1,8 +1,9 @@
-import Header from './Header.js';
+import Header from "./Header";
 
-export default class SearchResultPage extends Header{
+export default class SearchResultPage {
     constructor(page, productName) {
-        super(page);
+        this.page = page;
+        this.header = new Header(page);
         this.productName = productName;
     }
 

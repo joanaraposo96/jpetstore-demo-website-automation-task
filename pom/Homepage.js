@@ -1,13 +1,15 @@
-import Header from '..Header.js';
+import Header from './Header.js';
+import CategoryPage from './CategoryPage.js';
 
-export default class Homepage extends Header {
+export default class Homepage {
     constructor(page) {
-        super(page);
-        this.fishCategory = page.locator('div[id=sidebar] a[href*="FISH"]');
-        this.dogsCategory = page.locator('div[id=sidebar] a[href*="DOGS"]');
-        this.reptilesCategory = page.locator('div[id=sidebar] a[href*="REPTILES"]');
-        this.catsCategory = page.locator('div[id=sidebar] a[href*="CATS"]');
-        this.birdsCategory = page.locator('div[id=sidebar] a[href*="BIRDS"]');
+        this.page = page;
+        this.header = new Header(page);
+        this.fishCategory = page.locator('div[id=SidebarContent] a[href*="FISH"]');
+        this.dogsCategory = page.locator('div[id=SidebarContent] a[href*="DOGS"]');
+        this.reptilesCategory = page.locator('div[id=SidebarContent] a[href*="REPTILES"]');
+        this.catsCategory = page.locator('div[id=SidebarContent] a[href*="CATS"]');
+        this.birdsCategory = page.locator('div[id=SidebarContent] a[href*="BIRDS"]');
     }
 
     async navigateToHomepage() {
@@ -28,9 +30,8 @@ export default class Homepage extends Header {
             const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
             throw new Error(`Category "${capitalizedCategory}" not found.`);
         }
-
+        
         await categories[lowerCategory].click();
-        const { default: CategoryPage } = await import('./CategoryPage.js');
         return new CategoryPage(this.page, category);
     }
 }
