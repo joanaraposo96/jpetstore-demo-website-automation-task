@@ -1,4 +1,4 @@
-# JPetStore Demo Automation Task
+# JPetStore Demo Website Automation
 
 This project is a task for the **JPetStore Demo website**, demonstrating automated interactions using **Playwright**. The main functionalities covered are:
 
