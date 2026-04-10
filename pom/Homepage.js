@@ -1,5 +1,6 @@
 import Header from './Header.js';
 import CategoryPage from './CategoryPage.js';
+import Login from './Login.js';
 
 export default class Homepage {
     constructor(page) {
