@@ -27,9 +27,9 @@ test.describe('Petstore Search', () => {
         register = await login.clickRegister();
         const newUser = createUser();
         await register.fillRegistrationForm(newUser);
-        await homepage.header.clickSignIn();
-        await login.clickRegister();
-        await register.fillRegistrationForm(newUser);
+        const loginAgain = await homepage.header.clickSignIn();
+        const registerAgain = await loginAgain.clickRegister();
+        await registerAgain.fillRegistrationForm(newUser);
     });
 
     test('Register with invalid email', async ({ page }) => {
