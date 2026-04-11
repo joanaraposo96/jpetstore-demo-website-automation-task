@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { createUser } from '../test-data/userFactory.js';
+import { createUser } from '../test-data/userTemplate.js';
 import Header from '../pom/Header.js';
 import Homepage from '../pom/Homepage.js';
 
