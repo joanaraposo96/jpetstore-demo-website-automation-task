@@ -18,14 +18,24 @@ test.describe('Petstore Search', () => {
     test('Register new account', async ({ page }) => {
         login = await homepage.header.clickSignIn();
         register = await login.clickRegister();
-        const user = createUser();
-        await register.fillRegistrationForm(user);
+        const newUser = createUser();
+        await register.fillRegistrationForm(newUser);
+    });
+
+    test('Register already existing account', async ({ page }) => {
+        login = await homepage.header.clickSignIn();
+        register = await login.clickRegister();
+        const newUser = createUser();
+        await register.fillRegistrationForm(newUser);
+        await homepage.header.clickSignIn();
+        await login.clickRegister();
+        await register.fillRegistrationForm(newUser);
     });
 
     test('Register with invalid email', async ({ page }) => {
         login = await homepage.header.clickSignIn();
         register = await login.clickRegister();
-        let invalidEmail = createUser({ email: 'invalid-email' });
+        const invalidEmail = createUser({ email: 'invalid-email' });
         await register.fillRegistrationForm(invalidEmail);
     });
 });
