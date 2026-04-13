@@ -16,11 +16,15 @@ export default class Category {
     }
 
     async openProduct() {
-        const links = this.page.locator('tbody tr td a');
-        const linkCount = await links.count();
-        const randomIndex = Math.floor(Math.random() * linkCount);
-        await links.nth(randomIndex).click();
-        return new Product(this.page, name)
+        const rows = this.page.locator('tbody tr');
+        const count = await rows.count();
+
+        const randomIndex =  Math.floor(Math.random() * (count - 1)) + 1; // Counts how many usable rows there are and skips header
+        const selectedRow = rows.nth(randomIndex);
+
+        const name = await selectedRow.locator('td').nth(1).textContent(); // Get the 2nd column (name) from the selected row
+        await selectedRow.locator('td').nth(0).click(); // Opens product page by clicking on the 1st column (id) from the selected row
+        return new Product(this.page, name);
     }
 
     async addToCart() {
