@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import Header from '../pom/Header.js';
+import Header from '../components/Header.js';
 import Homepage from '../pom/Homepage.js';
 
 test.describe('Petstore Search', () => {

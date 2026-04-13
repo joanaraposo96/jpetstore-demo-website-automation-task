@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import Header from '../components/Header.js';
 import Homepage from '../pom/Homepage.js';
-import CategoryPage from '../pom/Category.js';
 
 test.describe('Add products to cart and check-out', () => {
     let header;
