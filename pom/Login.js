@@ -1,5 +1,5 @@
 import { register } from 'node:module';
-import Header from './Header.js';
+import Header from '../components/Header.js';
 import Register from './Register.js';
 
 export default class Login {

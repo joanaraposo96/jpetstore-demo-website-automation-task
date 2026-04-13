@@ -1,6 +1,5 @@
-import Header from './Header.js';
-import CategoryPage from './CategoryPage.js';
-import Login from './Login.js';
+import Header from '../components/Header.js';
+import Category from './Category.js';
 
 export default class Homepage {
     constructor(page) {
@@ -33,6 +32,6 @@ export default class Homepage {
         }
         
         await categories[lowerCategory].click();
-        return new CategoryPage(this.page, category);
+        return new Category(this.page, category);
     }
 }

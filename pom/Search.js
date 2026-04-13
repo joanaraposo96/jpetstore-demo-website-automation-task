@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
-import Header from "./Header";
+import Header from "../components/Header";
 
-export default class SearchResultPage {
+export default class Search {
     constructor(page, productName) {
         this.page = page;
         this.header = new Header(page);

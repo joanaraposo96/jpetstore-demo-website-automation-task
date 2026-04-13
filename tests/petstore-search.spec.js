@@ -16,7 +16,7 @@ test.describe('Petstore Search', () => {
 
     test('Search for a product by category', async ({ page }) => {
         category = await homepage.openCategory('Fish');
-        await category.expectCategoryHeaderToBeVisible();
+        await category.verifyCategoryHeader();
     });
 
     test('Search for a product by name', async ({ page }) => {
